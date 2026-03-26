@@ -1,0 +1,153 @@
+# =============================================================================
+# Runtime cache & evaluation outputs
+# =============================================================================
+backend/docs_cache/
+backend/ragas_eval/results/
+
+# Chroma / vector DB
+./backend/reports_chroma_db/
+./backend/reports/
+./backend/parsed_data/
+
+**/*.sqlite3
+**/*.bin
+**/*.pickle
+**/*.pdf
+backend/reports_chroma_db/
+backend/news_chroma_db/
+**/chroma.sqlite3
+**/*.bin
+
+# Python
+__pycache__/
+*.pyc
+
+# env
+.venv/
+venv/
+.env
+
+./backend/stock_direction_model/data
+./backend/chroma_db
+./backend/news_chroma_db
+./backend/reports_chroma_db
+./backend/reports
+
+# =============================================================================
+# Environment variables & API keys  (NEVER commit real credentials)
+# =============================================================================
+.env
+.env.*
+!.env.example
+
+# KIS API token caches
+backend/.kis_token_cache
+backend/.kis_approval_cache
+
+# =============================================================================
+# Database
+# =============================================================================
+*.db
+
+# =============================================================================
+# Portfolio user-specific cache (runtime only)
+# =============================================================================
+backend/portfolio_cache/*
+!backend/portfolio_cache/.gitkeep
+# 예시 데이터 — 개발 참고용으로 커밋에 포함
+!backend/portfolio_cache/user_8_portfolio.json
+!backend/portfolio_cache/user_13_portfolio.json
+
+# =============================================================================
+# Large ML / financial data files  (re-generate locally with pipeline scripts)
+# =============================================================================
+*.parquet
+*.joblib
+*.pkl
+*.pickle
+*.h5
+*.csv.gz
+
+# Temp processing dir
+backend/fin_structured_model/data/processed/tmp_single_refresh/
+
+# fin_structured_model data
+backend/fin_structured_model/data/raw/*
+!backend/fin_structured_model/data/raw/.gitkeep
+backend/fin_structured_model/data/processed/*
+!backend/fin_structured_model/data/processed/.gitkeep
+
+# stock_direction_model data & models
+backend/stock_direction_model/data/raw/*
+!backend/stock_direction_model/data/raw/.gitkeep
+backend/stock_direction_model/data/processed/*
+!backend/stock_direction_model/data/processed/.gitkeep
+backend/stock_direction_model/data/outputs/*
+!backend/stock_direction_model/data/outputs/.gitkeep
+backend/stock_direction_model/models/*
+!backend/stock_direction_model/models/.gitkeep
+backend/stock_direction_model/logs/*
+!backend/stock_direction_model/logs/.gitkeep
+
+# =============================================================================
+# Build outputs & dependencies
+# =============================================================================
+frontend/dist/
+frontend/node_modules/
+node_modules/
+build/
+dist/
+
+# =============================================================================
+# Test result files & debug output
+# =============================================================================
+backend/_test_result.txt
+_test_result.txt
+*_out.txt
+
+# =============================================================================
+# IDE / Editor settings
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =============================================================================
+# Conda / Python virtual environments
+# =============================================================================
+.conda/
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+__pypackages__/
+
+# Python compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# =============================================================================
+# Logs
+# =============================================================================
+*.log
+
+# =============================================================================
+# OS specific
+# =============================================================================
+.DS_Store
+Thumbs.db
+desktop.ini

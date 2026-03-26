@@ -1,0 +1,15 @@
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+pykrx
+pandas
+openai
+python-dotenv
+websockets>=12.0
+requests
+sqlalchemy
+pymysql
+mysql-connector-python
+cryptography
+aiofiles
+pathlib

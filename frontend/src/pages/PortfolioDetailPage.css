@@ -1,0 +1,656 @@
+/* PortfolioDetailPage.css */
+
+/* ── 추천 이유 섹션 ─────────────────────────────────────────────────────────── */
+.pd-reason-section {}
+
+.pd-reason-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pd-reason-item {
+  font-size: 1.06em;
+  color: #374151;
+  line-height: 1.85;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 12px 16px 12px 16px;
+  transition: all 0.3s ease;
+  padding-left: 36px;
+  position: relative;
+}
+
+.pd-reason-item::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #F97316;
+  flex-shrink: 0;
+}
+
+.pd-reason-item:hover {
+  background: #fff8f0;
+  transform: translateY(-2px);
+}
+
+.pd-reason-item strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.portfolio-detail-page {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding: 32px 40px;
+}
+
+.portfolio-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pd-back-btn {
+  background: white;
+  color: #333;
+  border: 2px solid #F97316;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+.pd-back-btn:hover { background: #F97316; color: white; }
+
+.pd-main-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+
+.pd-divider {
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  margin: 0;
+}
+
+.pd-section-row {
+  padding: 20px 40px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.pdf-page-break {
+  page-break-before: always;
+  break-before: page;
+}
+
+.pd-section-label {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pd-header-row .pd-section-label {
+  font-size: 1.5em;
+  color: #1e293b;
+}
+.pd-tier-summary-list {
+  font-size: 1.06em;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 6px 0 2px 0;
+  padding-left: 20px;
+}
+
+.pd-tier-summary-list li {
+  line-height: 1.6;
+}
+
+.pd-summary-text {
+  font-size: 1.06em;
+  color: #64748b;
+  line-height: 1.6;
+  padding-left: 14px;
+  border-left: 2px solid #e2e8f0;
+  margin-top: 4px;
+}
+
+.pd-donut-wrap {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+.pd-donut-tooltip {
+  position: absolute;
+  z-index: 100;
+  background: #1e293b;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  max-width: 260px;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: tooltipFadeIn 0.15s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pd-donut-tooltip-name {
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #F97316;
+}
+
+.pd-donut-tooltip-text {
+  font-size: 0.85em;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.pd-donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.pd-donut-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pd-donut-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pd-donut-name {
+  flex: 1;
+  font-size: 1.06em;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.pd-donut-pct {
+  font-size: 1.06em;
+  font-weight: 700;
+  color: #F97316;
+}
+
+.pd-labeled-bar {
+  display: flex;
+  height: 36px;
+  border-radius: 6px;
+  overflow: hidden;
+  gap: 1px;
+}
+.pd-bar-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+  cursor: default;
+}
+.pd-bar-segment:hover { opacity: 0.85; }
+.pd-bar-label {
+  font-size: 0.75em;
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.pd-bar-label-link {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.5);
+  text-underline-offset: 2px;
+}
+.pd-bar-label-link:hover {
+  text-decoration-color: rgba(255,255,255,0.95);
+}
+
+.pd-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+}
+.pd-col { min-width: 0; }
+
+.pd-perf-boxes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.pd-perf-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 90px;
+  text-align: center;
+}
+.pd-perf-box-label {
+  font-size: 0.85em;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+.pd-perf-box-value {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #334155;
+}
+
+.pd-mc-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.pd-mc-box {
+  flex: 1;
+  min-width: 80px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: center;
+}
+.pd-mc-label { font-size: 0.85em; color: #94a3b8; margin-bottom: 4px; }
+.pd-mc-value { font-size: 1.1em; font-weight: 700; }
+.pd-mc-bear { background: #fff1f2; }
+.pd-mc-bear .pd-mc-value { color: #e11d48; }
+.pd-mc-base { background: #f8fafc; }
+.pd-mc-base .pd-mc-value { color: #334155; }
+.pd-mc-bull { background: #f0fdf4; }
+.pd-mc-bull .pd-mc-value { color: #16a34a; }
+
+.pd-interpretation {
+  font-size: 1.06em;
+  color: #64748b;
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+/* AI 리스크 자연어 분석 */
+.pd-risk-summary {
+  font-size: 1.06em;
+  color: #374151;
+  line-height: 1.7;
+  margin-top: 4px;
+  margin-bottom: 24px;
+  padding: 8px 10px;
+  background: #fef2f2;
+  border-left: 3px solid #ef4444;
+  border-radius: 4px;
+}
+
+.pd-risk-item {
+  align-items: flex-start !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  padding: 12px 16px !important;
+  border-bottom: none !important;
+  background: #fafafa;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.pd-risk-item:hover {
+  background: #fff8f0;
+  transform: translateY(-2px);
+}
+
+.pd-risk-text {
+  font-size: 1.06em;
+  line-height: 1.5;
+  white-space: normal;
+  color: #1e293b !important;
+}
+
+
+.pd-pos { color: #dc2626; }
+.pd-neg { color: #10b981; }
+
+.pd-stock-list {
+  display: flex;
+  flex-direction: column;
+}
+.pd-stock-row {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+  align-items: flex-start;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.pd-stock-row:last-child { border-bottom: none; }
+
+.pd-stock-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  width: 200px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.pd-stock-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.pd-stock-name {
+  font-size: 1.06em;
+  font-weight: 700;
+  color: #1e293b;
+}
+.pd-stock-code {
+  font-size: 0.9em;
+  color: #94a3b8;
+}
+.pd-grade-badge {
+  font-size: 0.9em;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.pd-grade-Ź�� { background: #eff6ff; color: #1d4ed8; }
+.pd-grade-��� { background: #f0fdf4; color: #16a34a; }
+.pd-grade-��ȣ { background: #fffbeb; color: #d97706; }
+.pd-grade-���� { background: #f8fafc; color: #64748b; }
+.pd-grade-���� { background: #fff1f2; color: #e11d48; }
+.pd-grade-�������� { background: #f1f5f9; color: #94a3b8; }
+
+.pd-ai-badge {
+  font-size: 0.9em;
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.pd-stock-right {
+  flex: 1;
+  min-width: 0;
+}
+.pd-stock-reason {
+  font-size: 1.06em;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+}
+.pd-stock-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.pd-tag {
+  font-size: 0.9em;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+.pd-tag-pos { background: #f0fdf4; color: #16a34a; }
+.pd-tag-neg { background: #fff7ed; color: #c2410c; }
+
+.pd-ai-btn {
+  font-size: 0.9em;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #7c3aed;
+  background: #faf5ff;
+  color: #7c3aed;
+  cursor: pointer;
+  font-weight: 600;
+}
+.pd-ai-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.pd-status-msg { font-size: 0.85em; margin-top: 6px; }
+.pd-status-err { color: #e11d48; }
+.pd-status-warn { color: #d97706; }
+
+/* ── quant_signals 섹션 ─────────────────────────────────────────────────── */
+.pd-section-label-mt {
+  margin-top: 20px;
+}
+
+.pd-signal-bar-wrap {
+  position: relative;
+  height: 24px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.pd-signal-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 6px;
+  transition: width 0.4s ease;
+  max-width: 100%;
+}
+.pd-signal-pct {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+.pd-big-value {
+  font-size: 1.6em;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.pd-big-value-sub {
+  font-size: 0.85em;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.pd-signal-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pd-signal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.06em;
+  color: #475569;
+  padding: 3px 0;
+  border-bottom: 1px solid #f8fafc;
+}
+.pd-signal-name {
+  color: #334155;
+  font-weight: 700;
+}
+
+.pd-no-data {
+  font-size: 1.06em;
+  color: #cbd5e1;
+  margin: 4px 0 0 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.pd-notice { background: #fafafa; }
+.pd-notice ul { margin: 0; padding-left: 18px; }
+.pd-notice li { font-size: 0.85em; color: #94a3b8; line-height: 1.8; }
+
+.pd-footer {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: center;
+  background: #fafafa;
+}
+.pd-download-btn {
+  background: #1e293b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 32px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pd-download-btn:hover { background: #0f172a; }
+
+@media (max-width: 900px) {
+  .portfolio-detail-page { padding: 24px 20px; }
+  .pd-section-row { padding: 16px 20px; }
+}
+
+@media (max-width: 600px) {
+  .portfolio-detail-page { padding: 16px 10px; }
+  .pd-section-row { padding: 14px 14px; }
+  .pd-two-col { grid-template-columns: 1fr; }
+  .pd-stock-left { width: 100%; }
+  .pd-stock-row { flex-direction: column; }
+  .pd-bar-label { font-size: 0.7em; }
+}
+
+/* ── PDF 다운로드 전용 글씨 축소 ─────────────────────────────── */
+.pdf-mode {
+  font-size: 13px;
+}
+.pdf-mode .pd-section-label  { font-size: 1.2em; }
+.pdf-mode .pd-reason-item,
+.pdf-mode .pd-tier-summary-list,
+.pdf-mode .pd-summary-text,
+.pdf-mode .pd-stock-reason,
+.pdf-mode .pd-risk-summary,
+.pdf-mode .pd-risk-text,
+.pdf-mode .pd-interpretation,
+.pdf-mode .pd-signal-item { font-size: 0.95em; }
+.pdf-mode .pd-stock-name    { font-size: 0.95em; }
+.pdf-mode .pd-stock-code,
+.pdf-mode .pd-grade-badge,
+.pdf-mode .pd-ai-badge,
+.pdf-mode .pd-tag,
+.pdf-mode .pd-signal-name   { font-size: 0.82em; }
+.pdf-mode .pd-perf-box-value,
+.pdf-mode .pd-mc-value      { font-size: 0.95em; }
+.pdf-mode .pd-big-value     { font-size: 1.3em; }
+
+/* ── 인쇄 / PDF 저장 ──────────────────────────────────────────── */
+@media print {
+  /* 페이지 여백 */
+  @page { margin: 16mm 14mm; }
+
+  /* 헤더, 뒤로 버튼, 다운로드 버튼 숨김 */
+  header, nav, .pd-back-btn, .pd-footer, .pd-ai-btn, .pd-status-msg { display: none !important; }
+
+  body, .portfolio-detail-page {
+    background: #fff !important;
+    padding: 0 !important;
+  }
+
+  .portfolio-detail-container { width: 100% !important; }
+
+  .pd-main-card {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0;
+    break-inside: avoid;
+  }
+
+  /* 섹션 별로 강제 페이지 나눔 방지 */
+  .pd-section-row { break-inside: avoid; page-break-inside: avoid; }
+  .pd-stock-row   { break-inside: avoid; page-break-inside: avoid; }
+
+  /* 구성비율 바 배경색 인쇄 허용 */
+  .pd-bar-segment, .pd-signal-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* grade 배지 색상 인쇄 허용 */
+  [class*="pd-grade-"] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ── 로딩 및 에러 화면 ──────────────────────────────────────────────────── */
+.loading-container,
+.pd-error-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.loading-container {
+  background: transparent;
+}
+
+.loading-spinner {
+  width: 56px;
+  height: 56px;
+  border: 5px solid #d1fae5;
+  border-top-color: #10b981;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  margin: 0;
+  font-size: 1rem;
+  color: #10b981;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.pd-error-box {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: 60px auto;
+}
+
+.pd-error-box p {
+  color: #64748b;
+  margin-bottom: 24px;
+  font-size: 1rem;
+  line-height: 1.6;
+}

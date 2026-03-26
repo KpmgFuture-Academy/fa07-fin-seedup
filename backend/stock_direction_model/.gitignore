@@ -1,0 +1,38 @@
+./backend/stock_direction_model/data
+./parsed_data
+./backend/news_chroma_db/7d4e01e7-3663-4791-899d-d0a34b5a1262
+./backend/news_chroma_db/
+./backend/reports_chroma_db
+./backend/chroma_db
+./backend/reports
+
+# 환경변수 / 시크릿
+.env
+.env.*
+!.env.example
+
+# 대용량 데이터 파일
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/outputs/*
+!data/outputs/.gitkeep
+models/*
+!models/.gitkeep
+logs/*
+!logs/.gitkeep
+*.parquet
+*.joblib
+*.pkl
+*.csv
+
+# Python 캐시
+__pycache__/
+*.py[cod]
+*.pyc
+
+# 빌드 / 패키징
+dist/
+build/
+*.egg-info/
